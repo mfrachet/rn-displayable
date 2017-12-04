@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<coverage generated="1512386623356" clover="3.2.0">
-  <project timestamp="1512386623356" name="All files">
-    <metrics statements="8" coveredstatements="8" conditionals="2" coveredconditionals="2" methods="2" coveredmethods="2" elements="12" coveredelements="12" complexity="0" loc="8" ncloc="8" packages="2" files="2" classes="2">
+<coverage generated="1512392577060" clover="3.2.0">
+  <project timestamp="1512392577060" name="All files">
+    <metrics statements="17" coveredstatements="17" conditionals="8" coveredconditionals="8" methods="4" coveredmethods="4" elements="29" coveredelements="29" complexity="0" loc="17" ncloc="17" packages="2" files="2" classes="2">
       <package name="setup">
         <metrics statements="1" coveredstatements="1" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
         <file name="test.setup.js" path="/Users/pc/Soft/rnDisplayable/setup/test.setup.js">
@@ -10,16 +10,25 @@
         </file>
       </package>
       <package name="src">
-        <metrics statements="7" coveredstatements="7" conditionals="2" coveredconditionals="2" methods="2" coveredmethods="2"/>
+        <metrics statements="16" coveredstatements="16" conditionals="8" coveredconditionals="8" methods="4" coveredmethods="4"/>
         <file name="displayable.js" path="/Users/pc/Soft/rnDisplayable/src/displayable.js">
-          <metrics statements="7" coveredstatements="7" conditionals="2" coveredconditionals="2" methods="2" coveredmethods="2"/>
+          <metrics statements="16" coveredstatements="16" conditionals="8" coveredconditionals="8" methods="4" coveredmethods="4"/>
           <line num="4" count="1" type="stmt"/>
-          <line num="6" count="2" type="cond" truecount="2" falsecount="0"/>
-          <line num="7" count="1" type="stmt"/>
-          <line num="10" count="1" type="stmt"/>
-          <line num="13" count="2" type="stmt"/>
-          <line num="17" count="2" type="stmt"/>
-          <line num="21" count="2" type="stmt"/>
+          <line num="5" count="3" type="stmt"/>
+          <line num="7" count="2" type="cond" truecount="2" falsecount="0"/>
+          <line num="8" count="1" type="stmt"/>
+          <line num="11" count="1" type="stmt"/>
+          <line num="14" count="1" type="stmt"/>
+          <line num="16" count="4" type="cond" truecount="2" falsecount="0"/>
+          <line num="17" count="1" type="stmt"/>
+          <line num="20" count="3" type="cond" truecount="2" falsecount="0"/>
+          <line num="21" count="2" type="cond" truecount="2" falsecount="0"/>
+          <line num="22" count="1" type="stmt"/>
+          <line num="23" count="1" type="stmt"/>
+          <line num="27" count="2" type="stmt"/>
+          <line num="30" count="4" type="stmt"/>
+          <line num="34" count="4" type="stmt"/>
+          <line num="38" count="4" type="stmt"/>
         </file>
       </package>
     </metrics>

@@ -2,6 +2,15 @@
   "name": "rn-displayable",
   "version": "0.0.1",
   "private": false,
+  "main": "src/displayable.js",
+  "homepage": "https://github.com/mfrachet/rn-displayable",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/mfrachet/rn-displayable"
+  },
+  "description": "Display your components based on props or a set of rules",
+  "keywords": ["react-native", "ios", "android", "expo"],
+  "author": "Marvin FRACHET <marvin.frachet@gmail.com> (https://github.com/mfrachet)",
   "scripts": {
     "start": "node node_modules/react-native/local-cli/cli.js start",
     "format": "prettier-eslint --write \"src/**/*.js\"",
