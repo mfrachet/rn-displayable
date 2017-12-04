@@ -14,9 +14,7 @@
     "lint"
   ],
   "dependencies": {
-    "prop-types": "^15.6.0",
-    "react": "16.0.0",
-    "react-native": "0.50.4"
+    "prop-types": "^15.6.0"
   },
   "devDependencies": {
     "babel-jest": "21.2.0",
@@ -33,9 +31,15 @@
     "pre-commit": "^1.2.2",
     "prettier": "^1.6.1",
     "prettier-eslint-cli": "^4.3.0",
+    "react": "16.0.0",
+    "react-dom": "^16.2.0",
+    "react-native": "0.50.4",
     "react-test-renderer": "16.0.0"
   },
   "jest": {
-    "preset": "react-native"
+    "preset": "react-native",
+    "setupFiles": [
+      "./setup/test.setup.js"
+    ]
   }
 }
