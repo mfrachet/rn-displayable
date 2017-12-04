@@ -1,7 +1,27 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<coverage generated="1512384422611" clover="3.2.0">
-  <project timestamp="1512384422612" name="All files">
-    <metrics statements="0" coveredstatements="0" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0" elements="0" coveredelements="0" complexity="0" loc="0" ncloc="0" packages="0" files="0" classes="0">
+<coverage generated="1512386623356" clover="3.2.0">
+  <project timestamp="1512386623356" name="All files">
+    <metrics statements="8" coveredstatements="8" conditionals="2" coveredconditionals="2" methods="2" coveredmethods="2" elements="12" coveredelements="12" complexity="0" loc="8" ncloc="8" packages="2" files="2" classes="2">
+      <package name="setup">
+        <metrics statements="1" coveredstatements="1" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
+        <file name="test.setup.js" path="/Users/pc/Soft/rnDisplayable/setup/test.setup.js">
+          <metrics statements="1" coveredstatements="1" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
+          <line num="4" count="1" type="stmt"/>
+        </file>
+      </package>
+      <package name="src">
+        <metrics statements="7" coveredstatements="7" conditionals="2" coveredconditionals="2" methods="2" coveredmethods="2"/>
+        <file name="displayable.js" path="/Users/pc/Soft/rnDisplayable/src/displayable.js">
+          <metrics statements="7" coveredstatements="7" conditionals="2" coveredconditionals="2" methods="2" coveredmethods="2"/>
+          <line num="4" count="1" type="stmt"/>
+          <line num="6" count="2" type="cond" truecount="2" falsecount="0"/>
+          <line num="7" count="1" type="stmt"/>
+          <line num="10" count="1" type="stmt"/>
+          <line num="13" count="2" type="stmt"/>
+          <line num="17" count="2" type="stmt"/>
+          <line num="21" count="2" type="stmt"/>
+        </file>
+      </package>
     </metrics>
   </project>
 </coverage>

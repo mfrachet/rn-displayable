@@ -1,18 +1,15 @@
 {
-  "name": "rnDisplayable",
+  "name": "rn-displayable",
   "version": "0.0.1",
-  "private": true,
+  "private": false,
   "scripts": {
     "start": "node node_modules/react-native/local-cli/cli.js start",
-    "format": "prettier-eslint --write \"src/**/*.js\" && prettier-eslint --write \"Example/components/**/*.js\"",
+    "format": "prettier-eslint --write \"src/**/*.js\"",
     "lint": "eslint ./src",
     "test": "./node_modules/.bin/jest --coverage --no-cache",
     "test:auto": "./node_modules/.bin/jest --watch"
   },
-  "pre-commit": [
-    "test",
-    "lint"
-  ],
+  "pre-commit": ["test", "lint"],
   "dependencies": {
     "prop-types": "^15.6.0"
   },
@@ -38,8 +35,6 @@
   },
   "jest": {
     "preset": "react-native",
-    "setupFiles": [
-      "./setup/test.setup.js"
-    ]
+    "setupFiles": ["./setup/test.setup.js"]
   }
 }
