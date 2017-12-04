@@ -63,15 +63,15 @@ const DisplayableText = displayable(Text, rules);
 export default function() {
   return (
     <View>
-      <DisplayableText isDisplayed number={3}>
+      <DisplayableText number={3}>
         This is not displayed ! (first rule not resolved)
       </DisplayableText>
-      <DisplayableText isDisplayed number={8}>
+
+      <DisplayableText number={8}>
         This is not displayed ! (second rule not resolved)
       </DisplayableText>
-      <DisplayableText isDisplayed number={12}>
-        This is displayed !
-      </DisplayableText>
+
+      <DisplayableText number={12}>This is displayed !</DisplayableText>
     </View>
   );
 }
