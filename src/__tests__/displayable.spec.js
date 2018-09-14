@@ -34,8 +34,8 @@ describe('displayable', () => {
       const isEvenA = props => props.a % 2 !== 0;
       const rules = [isPairB, isEvenA];
 
-      Component = displayable(TextComponent, rules);
-      wrapper = shallow(<Component a={5} b={6} />);
+      Component = displayable(TextComponent);
+      wrapper = shallow(<Component a={5} b={6} rules={rules} />);
 
       expect(wrapper.find('TextComponent').length).toEqual(1);
     });
@@ -46,8 +46,8 @@ describe('displayable', () => {
       const isEvenA = props => props.a % 2 !== 0;
       const rules = [isPairB, isEvenA];
 
-      Component = displayable(TextComponent, rules);
-      wrapper = shallow(<Component a={5} b={6} />);
+      Component = displayable(TextComponent);
+      wrapper = shallow(<Component a={5} b={6} rules={rules} />);
 
       expect(wrapper.type()).toEqual(null);
     });

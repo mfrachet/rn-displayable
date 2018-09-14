@@ -11,13 +11,13 @@ const manageRules = (rules, props) => {
   return true;
 };
 
-const displayable = (Component, rules) => {
-  function Displayable(props) {
+const displayable = (Component) => {
+  function Displayable({ rules, ...props }) {
     if (props.isDisplayed) {
       return <Component {...props} />;
     }
 
-    if (rules) {
+    if (rules.length) {
       if (manageRules(rules, props)) {
         return <Component {...props} />;
       }
@@ -28,10 +28,12 @@ const displayable = (Component, rules) => {
 
   Displayable.propTypes = {
     isDisplayed: PropTypes.bool,
+    rules: PropTypes.arrayOf(PropTypes.func),
   };
 
   Displayable.defaultProps = {
     isDisplayed: false,
+    rules: [],
   };
 
   return Displayable;

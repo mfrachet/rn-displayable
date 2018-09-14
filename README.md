@@ -24,7 +24,7 @@ The following code connect the `Text` component via an `HoC` to provide a
 By default, the component is hidden.
 
 To display a component, simply add the `isDisplayed` props to the connected
-component :
+component:
 
 ```javascript
 /* react stuff... */
@@ -47,7 +47,7 @@ export default function() {
 It's quite common to display or hide components based on business logic. This
 module also helps to display or not component by using an array of rules. The
 module expect each function to accept the component props as argument and to
-return a boolean value :
+return a boolean value:
 
 ```javascript
 /* react stuff... */
@@ -58,20 +58,20 @@ const isBiggerThan10 = props => props.number > 10;
 
 const rules = [isBiggerThan5, isBiggerThan10];
 
-const DisplayableText = displayable(Text, rules);
+const DisplayableText = displayable(Text);
 
 export default function() {
   return (
     <View>
-      <DisplayableText number={3}>
+      <DisplayableText number={3} rules={rules}>
         This is not displayed ! (first rule not resolved)
       </DisplayableText>
 
-      <DisplayableText number={8}>
+      <DisplayableText number={8} rules={rules}>
         This is not displayed ! (second rule not resolved)
       </DisplayableText>
 
-      <DisplayableText number={12}>This is displayed !</DisplayableText>
+      <DisplayableText number={12} rules={rules}>This is displayed !</DisplayableText>
     </View>
   );
 }
