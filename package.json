@@ -9,18 +9,24 @@
     "url": "https://github.com/mfrachet/rn-displayable"
   },
   "description": "Display your components based on props or a set of rules",
-  "keywords": ["react-native", "ios", "android", "expo"],
+  "keywords": [
+    "react-native",
+    "ios",
+    "android",
+    "expo"
+  ],
   "author": "Marvin FRACHET <marvin.frachet@gmail.com> (https://github.com/mfrachet)",
   "scripts": {
-    "start": "node node_modules/react-native/local-cli/cli.js start",
     "format": "prettier-eslint --write \"src/**/*.js\"",
     "lint": "eslint ./src",
-    "test": "./node_modules/.bin/jest --coverage --no-cache",
-    "test:auto": "./node_modules/.bin/jest --watch"
+    "test": "./node_modules/.bin/jest --coverage --no-cache"
   },
-  "pre-commit": ["test", "lint"],
+  "pre-commit": [
+    "test",
+    "lint"
+  ],
   "dependencies": {
-    "prop-types": "^15.6.0"
+    "prop-types": "15.6.1"
   },
   "devDependencies": {
     "babel-jest": "21.2.0",
@@ -44,6 +50,8 @@
   },
   "jest": {
     "preset": "react-native",
-    "setupFiles": ["./setup/test.setup.js"]
+    "setupFiles": [
+      "./setup/test.setup.js"
+    ]
   }
 }
