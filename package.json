@@ -2,7 +2,7 @@
   "name": "rn-displayable",
   "version": "0.0.1",
   "private": false,
-  "main": "src/displayable.js",
+  "main": "src/index.js",
   "homepage": "https://github.com/mfrachet/rn-displayable",
   "repository": {
     "type": "git",
