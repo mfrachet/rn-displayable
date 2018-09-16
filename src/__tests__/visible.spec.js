@@ -1,25 +1,25 @@
 import React from 'react';
 import { shallow } from 'enzyme';
-import makeDisplayable from '../displayable';
+import makeVisible from '../visible';
 
-describe('makeDisplayable', () => {
+describe('makeVisible', () => {
   let wrapper;
 
   const TextComponent = () => <div>Hello world</div>;
-  const Component = makeDisplayable(TextComponent);
+  const Component = makeVisible(TextComponent);
   const getWrapper = (props = {}) => shallow(<Component {...props} />);
 
   describe('with isDisplayed props', () => {
-    it('should have displayed the component', () => {
-      wrapper = getWrapper({ isDisplayed: true });
+    it('should have displayed the component with a display style of flex', () => {
+      wrapper = getWrapper({ isVisible: true });
 
-      expect(wrapper.type()).not.toEqual(null);
+      expect(wrapper.find(TextComponent).prop('style')).toEqual({ display: 'flex' });
     });
 
-    it('shouldnt have displayed the component', () => {
+    it('should also have displayed the component but with a display style of none', () => {
       wrapper = getWrapper();
 
-      expect(wrapper.type()).toEqual(null);
+      expect(wrapper.find(TextComponent).prop('style')).toEqual({ display: 'none' });
     });
   });
 
@@ -29,20 +29,20 @@ describe('makeDisplayable', () => {
       const isEvenA = props => props.a % 2 !== 0;
       const rules = [isPairB, isEvenA];
 
-      const C = makeDisplayable(TextComponent);
+      const C = makeVisible(TextComponent);
       wrapper = shallow(<C a={5} b={6} rules={rules} />);
 
       expect(wrapper.find('TextComponent').length).toEqual(1);
     });
 
-    it('shouldnt have displayed the component when a rule is false', () => {
+    it('should have displayed the component with a display style of none when rules doesnt match', () => {
       const isPairB = props => props.b % 2 !== 0;
       const isEvenA = props => props.a % 2 !== 0;
       const rules = [isPairB, isEvenA];
 
       wrapper = getWrapper({ a: 5, b: 6, rules });
 
-      expect(wrapper.type()).toEqual(null);
+      expect(wrapper.find(TextComponent).prop('style')).toEqual({ display: 'none' });
     });
   });
 

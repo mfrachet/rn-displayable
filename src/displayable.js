@@ -1,10 +1,9 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import Animate from './animate';
+import { verifyRules } from './helpers';
 
-const verifyRules = (rules, props) => rules.length && !rules.find(rule => !rule(props));
-
-const displayable = (Component) => {
+const makeDisplayable = (Component) => {
   const Displayable = ({ rules, Animation, isDisplayed, ...props }) =>
     (isDisplayed || verifyRules(rules, props) ? (
       <Animate Animation={Animation}>
@@ -27,4 +26,4 @@ const displayable = (Component) => {
   return Displayable;
 };
 
-export default displayable;
+export default makeDisplayable;
