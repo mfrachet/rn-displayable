@@ -4,12 +4,21 @@ import Animate from './animate';
 import { verifyRules } from './helpers';
 
 const makeDisplayable = (Component) => {
-  const Displayable = ({ rules, Animation, isDisplayed, ...props }) =>
-    (isDisplayed || verifyRules(rules, props) ? (
-      <Animate Animation={Animation}>
-        <Component {...props} />
-      </Animate>
-    ) : null);
+  class Displayable extends React.Component {
+    shouldComponentUpdate(nextProps) {
+      return nextProps.isDisplayed !== this.props.isDisplayed;
+    }
+
+    render() {
+      const { rules, Animation, isDisplayed, ...props } = this.props;
+
+      return (isDisplayed || verifyRules(rules, props) ? (
+        <Animate Animation={Animation}>
+          <Component {...props} />
+        </Animate>
+      ) : null);
+    }
+  }
 
   Displayable.propTypes = {
     isDisplayed: PropTypes.bool,

@@ -4,15 +4,23 @@ import Animate from './animate';
 import { verifyRules } from './helpers';
 
 const makeVisible = (Component) => {
-  const Visible = ({ rules, Animation, isVisible, style, ...props }) => {
-    const visibilityStyle = { display: isVisible || verifyRules(rules, props) ? 'flex' : 'none' };
+  class Visible extends React.Component {
+    shouldComponentUpdate(nextProps) {
+      return nextProps.isVisible !== this.props.isVisible;
+    }
 
-    return (
-      <Animate Animation={Animation}>
-        <Component style={{ ...style, ...visibilityStyle }} {...props} />
-      </Animate>
-    );
-  };
+    render() {
+      const { rules, Animation, isVisible, style, ...props } = this.props;
+      const visibilityStyle = { display: isVisible || verifyRules(rules, props) ? 'flex' : 'none' };
+
+      return (
+        <Animate Animation={Animation}>
+          <Component style={{ ...style, ...visibilityStyle }} {...props} />
+        </Animate>
+      );
+    }
+  }
+
   Visible.propTypes = {
     isVisible: PropTypes.bool,
     rules: PropTypes.arrayOf(PropTypes.func),

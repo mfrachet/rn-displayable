@@ -55,4 +55,22 @@ describe('makeDisplayable', () => {
       expect(wrapper.find('Animate').prop('Animation')).toEqual(SomeAnimation);
     });
   });
+
+  describe('shouldComponentUpdate', () => {
+    it('should have updated the component', () => {
+      wrapper = getWrapper();
+
+      const instance = wrapper.instance();
+
+      expect(instance.shouldComponentUpdate({ isDisplayed: true })).toBe(true);
+    });
+
+    it('shouldnt have updated the component', () => {
+      wrapper = getWrapper({ isDisplayed: true });
+
+      const instance = wrapper.instance();
+
+      expect(instance.shouldComponentUpdate({ isDisplayed: true })).toBe(false);
+    });
+  });
 });

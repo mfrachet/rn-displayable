@@ -55,4 +55,22 @@ describe('makeVisible', () => {
       expect(wrapper.find('Animate').prop('Animation')).toEqual(SomeAnimation);
     });
   });
+
+  describe('shouldComponentUpdate', () => {
+    it('should have updated the component', () => {
+      wrapper = getWrapper();
+
+      const instance = wrapper.instance();
+
+      expect(instance.shouldComponentUpdate({ isVisible: true })).toBe(true);
+    });
+
+    it('shouldnt have updated the component', () => {
+      wrapper = getWrapper({ isVisible: true });
+
+      const instance = wrapper.instance();
+
+      expect(instance.shouldComponentUpdate({ isVisible: true })).toBe(false);
+    });
+  });
 });
